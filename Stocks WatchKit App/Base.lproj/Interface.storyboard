@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9019"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Stocks_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" id="Q4O-Uk-omU">
+                            <items>
+                                <label alignment="center" text="Symbol" id="ahM-pE-f5p">
+                                    <fontDescription key="font" type="boldSystem" pointSize="21"/>
+                                </label>
+                            </items>
+                        </group>
+                        <group width="1" height="75" alignment="left" layout="vertical" id="sYn-AJ-dNx">
+                            <items>
+                                <group width="1" alignment="left" id="rba-84-YTT">
+                                    <items>
+                                        <label alignment="left" text="Name:" id="6mS-o9-QZG"/>
+                                        <label alignment="right" text="Label" id="90C-H9-LTV"/>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="left" id="JRa-he-4oa">
+                                    <items>
+                                        <label alignment="left" text="Last:" id="jpq-F5-1WK"/>
+                                        <label alignment="right" text="Label" id="7mF-ws-D1f"/>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="left" id="4Vl-GV-t8P">
+                                    <items>
+                                        <label alignment="left" text="% Chng:" id="H95-DV-snS"/>
+                                        <label alignment="right" text="Label" id="FeK-WP-p3l"/>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="6fP-Qz-2dE">
+                            <items>
+                                <button width="1" alignment="left" title="Change Symbol" id="B5e-14-EfS">
+                                    <connections>
+                                        <action selector="btnChangeSymbol" destination="AgC-eL-Hgc" id="nNd-it-ysF"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="lblChange" destination="FeK-WP-p3l" id="Ewk-Yv-pWa"/>
+                        <outlet property="lblLast" destination="7mF-ws-D1f" id="aQx-YN-ba0"/>
+                        <outlet property="lblName" destination="90C-H9-LTV" id="y9S-nO-yVr"/>
+                        <outlet property="lblSymbol" destination="ahM-pE-f5p" id="0Ng-16-Kjw"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="Stocks_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>
